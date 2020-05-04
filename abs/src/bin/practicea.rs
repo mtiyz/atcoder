@@ -1,23 +1,12 @@
-use std::io::*;
-use std::str::FromStr;
-
-fn read<T: FromStr>() -> T {
-  let stdin = stdin();
-  let stdin = stdin.lock();
-  let token: String = stdin
-    .bytes()
-    .map(|c| c.expect("failed to read char") as char)
-    .skip_while(|c| c.is_whitespace())
-    .take_while(|c| !c.is_whitespace())
-    .collect();
-  token.parse().ok().expect("failed to parse token")
-}
+use proconio::input;
 
 fn main() {
-  let first_int: u32 = read();
-  let second_int: u32 = read();
-  let third_int: u32 = read();
-  let s: String = read();
-  let res = first_int + second_int + third_int;
+  input! {
+    num1: u32,
+    num2: u32,
+    num3: u32,
+    s: String
+  }
+  let res = num1 + num2 + num3;
   println!("{} {}", res, s);
 }
