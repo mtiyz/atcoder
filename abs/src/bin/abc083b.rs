@@ -11,11 +11,7 @@ fn main() {
 
   let ans: u32 = (1..n + 1)
     .filter(|x| {
-      let s: u32 = x
-        .to_string()
-        .chars()
-        .map(|c| c as u32 - 48)
-        .sum();
+      let s: u32 = x.to_string().chars().map(|c| c as u32 - 48).sum();
       let res = if a < s + 1 && s < b + 1 { true } else { false };
       res
     })
